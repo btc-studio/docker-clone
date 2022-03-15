@@ -5,7 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Empowering App Development for Developers | Docker </title>
           <meta name="description" content="Docker Landing Page" />
           <link rel="icon" href="/docker.ico" />
         </Head>
