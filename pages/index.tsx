@@ -321,8 +321,10 @@ const Home: NextPage = () => {
               className="border-solid border border-sky-600 mt-4 rounded px-2 py-1 w-10/12 h-9 md:m-0 md:w-auto"
               placeholder="Select your language"
             >
-              {countryList.map((country) => (
-                <option value="volvo">{country}</option>
+              {countryList.map((country, idx) => (
+                <option key={idx} value="volvo">
+                  {country}
+                </option>
               ))}
             </select>
             <button className="py-1.5 rounded font-semibold bg-blue-600 text-white px-12 mt-40  md:m-0 md:ml-2">
