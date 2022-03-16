@@ -4,6 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import AllHands from '../public/all-hands-community.png';
+import Bitbucket from '../public/bitbucket_full.png';
+import Aws from '../public/aws_sm_logo.png';
+import Netflix from '../public/netflix_full.png';
+
+const images = [Bitbucket, Bitbucket, Bitbucket, Bitbucket, Bitbucket];
 
 const countryList = [
   'Select Country',
@@ -277,7 +282,7 @@ const Home: NextPage = () => {
               <div className="text-5xl font-bold text-gray-800">
                 13 million +
               </div>
-              <div className="text-lg text-gray-700 font-normal">
+              <div className="text-xl text-gray-700 font-normal">
                 developers
               </div>
             </div>
@@ -285,7 +290,7 @@ const Home: NextPage = () => {
               <div className="text-5xl font-bold text-gray-800">
                 7 million +
               </div>
-              <div className="text-lg text-gray-700 font-normal">
+              <div className="text-xl text-gray-700 font-normal">
                 applications
               </div>
             </div>
@@ -293,7 +298,7 @@ const Home: NextPage = () => {
               <div className="text-5xl font-bold text-gray-800">
                 13 billion +
               </div>
-              <div className="text-lg text-gray-700 font-normal">
+              <div className="text-xl text-gray-700 font-normal">
                 monthly image downloads
               </div>
             </div>
@@ -301,6 +306,96 @@ const Home: NextPage = () => {
           <button className="mx-auto mb-24 text-lg py-3 rounded font-semibold bg-blue-600 text-white px-14 ">
             Get Started
           </button>
+        </div>
+      </div>
+
+      <div className="mx-2 my-14">
+        <div className="text-center max-w-screen-md mx-auto">
+          <div className="text-5xl font-semibold text-gray-800 mb-3">
+            Docker makes development efficient and predictable
+          </div>
+          <div className="text-xl md:text-2xl text-gray-700">
+            Docker takes away repetitive, mundane configuration tasks and is
+            used throughout the development lifecycle for fast, easy and
+            portable application development - desktop and cloud. Docker’s
+            comprehensive end to end platform includes UIs, CLIs, APIs and
+            security that are engineered to work together across the entire
+            application delivery lifecycle.
+          </div>
+        </div>
+        <div className="my-28 ">
+          <div className="md:max-w-screen-lg md:mx-auto md:flex md:flex-row-reverse md:items-center ">
+            <div className="h-48 md:ml-20 md:basis-1/2 md:h-80 w-full bg-[url('../public/Docker-build.png')] bg-cover bg-no-repeat bg-center"></div>
+            <div className="md:ml-20 md:basis-1/2">
+              <div className="text-5xl font-semibold my-6">Build</div>
+              <ul className="list-disc mx-5 list-outside text-slate-500 text-lg">
+                <li>
+                  Get a head start on your coding by leveraging Docker images to
+                  efficiently develop your own unique applications on Windows
+                  and Mac. Create your multi-container application using Docker
+                  Compose.
+                </li>
+                <li>
+                  Integrate with your favorite tools throughout your development
+                  pipeline - Docker works with all development tools you use
+                  including VS Code, CircleCI and GitHub.
+                </li>
+                <li>
+                  Package applications as portable container images to run in
+                  any environment consistently from on-premises Kubernetes to
+                  AWS ECS, Azure ACI, Google GKE and more.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="md:max-w-screen-lg md:mx-auto md:flex md:flex-row md:items-center ">
+            <div className="h-48 md:ml-20 md:basis-1/2 md:h-80 w-full bg-[url('../public/Docker-build.png')] bg-cover bg-no-repeat bg-center"></div>
+            <div className="md:ml-20 md:basis-1/2">
+              <div className="text-5xl font-semibold my-6">Build</div>
+              <ul className="list-disc mx-5 list-outside text-slate-500 text-lg">
+                <li>
+                  Get a head start on your coding by leveraging Docker images to
+                  efficiently develop your own unique applications on Windows
+                  and Mac. Create your multi-container application using Docker
+                  Compose.
+                </li>
+                <li>
+                  Integrate with your favorite tools throughout your development
+                  pipeline - Docker works with all development tools you use
+                  including VS Code, CircleCI and GitHub.
+                </li>
+                <li>
+                  Package applications as portable container images to run in
+                  any environment consistently from on-premises Kubernetes to
+                  AWS ECS, Azure ACI, Google GKE and more.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="md:max-w-screen-lg md:mx-auto md:flex md:flex-row-reverse md:items-center ">
+            <div className="h-48 md:ml-20 md:basis-1/2 md:h-80 w-full bg-[url('../public/Docker-build.png')] bg-cover bg-no-repeat bg-center"></div>
+            <div className="md:ml-20 md:basis-1/2">
+              <div className="text-5xl font-semibold my-6">Build</div>
+              <ul className="list-disc mx-5 list-outside text-slate-500 text-lg">
+                <li>
+                  Get a head start on your coding by leveraging Docker images to
+                  efficiently develop your own unique applications on Windows
+                  and Mac. Create your multi-container application using Docker
+                  Compose.
+                </li>
+                <li>
+                  Integrate with your favorite tools throughout your development
+                  pipeline - Docker works with all development tools you use
+                  including VS Code, CircleCI and GitHub.
+                </li>
+                <li>
+                  Package applications as portable container images to run in
+                  any environment consistently from on-premises Kubernetes to
+                  AWS ECS, Azure ACI, Google GKE and more.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -346,14 +441,129 @@ const Home: NextPage = () => {
               peer-to-peer support, there’s someone else out there who has been
               there, done that, and is eager to help.
             </div>
-            <button className="transition duration-300 ease-linear bg-blue-900 text-white px-20 py-4 mt-12 rounded font-semibold  hover:bg-slate-200 hover:text-sky-500">
+            <button className="text-lg transition duration-300 ease-linear bg-blue-900 text-white px-20 py-4 mt-12 rounded font-semibold  hover:bg-slate-200 hover:text-sky-500">
               Join in
             </button>
           </div>
         </div>
       </div>
 
-      <div className="bg-gray-300">hello</div>
+      <div className="bg-gray-200 px-2 py-6">
+        <div>
+          <div className="pt-6 pb-14 text-4xl md:text-5xl font-semibold text-center text-slate-800">
+            Use your favorite tools and images
+          </div>
+          <div>
+            <div className="flex flex-wrap items-center justify-center max-w-screen-xl md:mx-auto ">
+              {Array.from(Array(13).keys()).map((item) => (
+                <div
+                  key={item}
+                  className={
+                    item > 3
+                      ? 'w-40 md:w-52 m-2 mt-0 hidden md:block'
+                      : 'w-40 md:w-52 m-2 mt-0'
+                  }
+                >
+                  <Image src={Bitbucket} alt="brand" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:max-w-screen-lg pb-28 md:mx-auto md:flex md:flex-row md:items-center ">
+        <div className="h-48 md:ml-20 md:basis-1/2 md:h-80 w-full bg-[url('../public/pricing_fullhand.png')] bg-cover bg-no-repeat bg-center"></div>
+        <div className="md:ml-20 md:basis-1/2 mx-3">
+          <div className="text-5xl font-semibold my-6 text-slate-700">
+            Choose a subscription that is right for you
+          </div>
+
+          <div className="text-xl text-slate-900">
+            Benefit from more collaboration, increased security, without
+            limits... all enabled with a Docker subscription. Check out our
+            <span> </span>
+            <Link href="/about">
+              <span className="cursor-pointer text-sky-500 hover:text-blue-600 hover:underline hover:decoration-2">
+                pricing
+              </span>
+            </Link>
+            <span>.</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gray-200 px-2 py-6">
+        <div>
+          <div className="pt-6 pb-14 text-4xl md:text-5xl font-semibold text-center text-slate-800">
+            See who uses Docker
+          </div>
+          <div>
+            <div className="flex flex-wrap items-center justify-center max-w-screen-xl md:mx-auto ">
+              {Array.from(Array(22).keys()).map((item) => (
+                <div
+                  key={item}
+                  className={
+                    item > 3
+                      ? 'w-40 md:w-52 m-2 mt-0 hidden md:block'
+                      : 'w-40 md:w-52 m-2 mt-0'
+                  }
+                >
+                  <Image src={Netflix} alt="brand" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 mb-10">
+          <div className="md:px-8 text-center max-w-screen-lg mx-auto text-4xl md:text-5xl font-semibold  text-slate-800">
+            Go from code to cloud securely with partners that you trust
+          </div>
+          <div className="md:px-8 text-xl text-zinc-500 text-center mt-3 md:text-2xl max-w-screen-lg mx-auto">
+            Trust that your development pipeline workflow will work in any
+            environment – locally and in the cloud.
+          </div>
+        </div>
+
+        <div className="max-w-screen-lg mx-auto mt-20">
+          <div className="mx-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10">
+              {Array.from(Array(4).keys()).map((item) => (
+                <div
+                  key={item}
+                  className="md:col-span-1 bg-white rounded-lg px-8 py-14"
+                >
+                  <Image src={Aws} alt="bitbucket" />
+                  <div className="text-lg text-slate-800 my-14 md:mt-3">
+                    Simplify the development of your multi-container
+                    applications from Docker CLI to Amazon ECS on AWS Fargate.
+                  </div>
+                  <div className="mt-6">
+                    <div className="inline text-blue-600 text-xl">
+                      <Link href="/about">
+                        <span className="cursor-pointer">
+                          <span>&#x2794;</span>
+                          <span> </span>
+                          <span> </span>
+                          <span> </span>
+                          <span>Learn more</span>
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <button className="mx-auto mb-10 mt-24 md:mt-40 text-lg py-3 rounded font-semibold bg-blue-600 text-white px-12 ">
+            Learn more
+          </button>
+        </div>
+      </div>
 
       <div className="px-2 py-20 flex flex-col items-center max-w-screen-lg mx-auto">
         <div className=" font-semibold text-4xl text-gray-800 text-center px-12">
