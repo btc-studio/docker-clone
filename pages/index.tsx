@@ -1,6 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import AllHands from '../public/all-hands-community.png';
 
 const countryList = [
   'Select Country',
@@ -217,8 +220,92 @@ const Home: NextPage = () => {
         <title>Empowering App Development for Developers | Docker </title>
       </Head>
 
+      <div className="px-2 w-full pt-14 pb-48 md:py-56  text-white bg-[url('../public/cover.png')] bg-cover bg-no-repeat bg-center">
+        <div className="md:max-w-screen-md md:mx-auto">
+          <div className="text-5xl md:text-6xl font-semibold text-center md:text-left">
+            Developers Love Docker. Businesses Trust It.
+          </div>
+          <div className="text-cyan-100 text-3xl mt-6 text-center md:text-left">
+            Build safer, share wider, run faster: New updates to our product
+            subscriptions.
+          </div>
+          <button className=" transition duration-300 ease-linear bg-blue-900 text-white px-14 py-4 mt-14 rounded font-semibold  hover:bg-slate-200 hover:text-sky-500">
+            Learn more
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-gray-200">
+        <div className="bg-white p-8 rounded-lg mx-3 negative md:flex lg:max-w-screen-lg lg:mx-auto">
+          <div className="md:mr-16 h-48 w-full bg-[url('../public/whatsnew.png')] bg-cover bg-no-repeat bg-center"></div>
+          <div>
+            <div className="text-sky-500 uppercase font-semibold mt-8 mb-2 text-lg">
+              What's new
+            </div>
+            <div className="text-2xl text-gray-800 font-semibold">
+              Key Trends to Watch in 2022
+            </div>
+            <div className="text-slate-500 text-lg mt-2">
+              What are the six major trends impacting development teams and
+              ultimately the way organizations operate and consume applications
+              today? Read this report to learn how development teams can
+              minimize disruption by modernizing the way they build, share, and
+              run their applications with Docker.
+            </div>
+            <div className="mt-6">
+              <div className="inline group text-sky-500 text-xl">
+                <Link href="/about">
+                  <span className="cursor-pointer">
+                    <span>
+                      &#8594; <span> </span>
+                      <span className="group-hover:underline group-hover:decoration-1">
+                        Read Now!
+                      </span>
+                    </span>
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="max-w-screen-md font-semibold text-5xl text-slate-800 px-3 text-center">
+            Accelerate how you build, share, and run modern applications.
+          </div>
+          <div className="mb-10 mt-16 flex flex-col items-center justify-center md:flex-row md:gap-20 md:flex-wrap">
+            <div>
+              <div className="text-5xl font-bold text-gray-800">
+                13 million +
+              </div>
+              <div className="text-lg text-gray-700 font-normal">
+                developers
+              </div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold text-gray-800">
+                7 million +
+              </div>
+              <div className="text-lg text-gray-700 font-normal">
+                applications
+              </div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold text-gray-800">
+                13 billion +
+              </div>
+              <div className="text-lg text-gray-700 font-normal">
+                monthly image downloads
+              </div>
+            </div>
+          </div>
+          <button className="mx-auto mb-24 text-lg py-3 rounded font-semibold bg-blue-600 text-white px-14 ">
+            Get Started
+          </button>
+        </div>
+      </div>
+
       <div className="text-center bg-blue-900 text-white">
-        <div className="max-w-screen-lg mx-auto py-16 md:pb-5 border-b border-slate-100 md:border-none">
+        <div className="max-w-screen-lg mx-auto py-16 md:pb-5">
           <div className="text-5xl font-semibold">New to containers?</div>
           <div className="text-2xl mt-4 px-4 md:max-w-screen-md mx-auto">
             Today, all major cloud providers and leading open source serverless
@@ -241,6 +328,32 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+
+      <div className="py-14">
+        <div className="flex flex-col  justify-between items-center md:flex-row-reverse md:max-w-screen-lg md:mx-auto ">
+          <div className="md:ml-24  md:basis-1/2">
+            <div className="h-80 w-80  bg-[url('../public/all-hands-community.png')] bg-cover bg-no-repeat bg-center"></div>
+          </div>
+
+          <div className="md:basis-1/2 mx-6 md:ml-16 md:mr-0">
+            <div className="text-5xl font-semibold ">
+              A Community like No Other
+            </div>
+            <div className="text-2xl my-4">
+              Community is at the heart of what Docker does. From our Docker
+              Captains sharing their insight and expertise, to hundreds of
+              MeetUps around the world, to our Slack and Discourse forums for
+              peer-to-peer support, there’s someone else out there who has been
+              there, done that, and is eager to help.
+            </div>
+            <button className="transition duration-300 ease-linear bg-blue-900 text-white px-20 py-4 mt-12 rounded font-semibold  hover:bg-slate-200 hover:text-sky-500">
+              Join in
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gray-300">hello</div>
 
       <div className="px-2 py-20 flex flex-col items-center max-w-screen-lg mx-auto">
         <div className=" font-semibold text-4xl text-gray-800 text-center px-12">
