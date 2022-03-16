@@ -240,7 +240,7 @@ const Home: NextPage = () => {
           <div className="md:mr-16 h-48 w-full bg-[url('../public/whatsnew.png')] bg-cover bg-no-repeat bg-center"></div>
           <div>
             <div className="text-sky-500 uppercase font-semibold mt-8 mb-2 text-lg">
-              What's new
+              What&apos;s new
             </div>
             <div className="text-2xl text-gray-800 font-semibold">
               Key Trends to Watch in 2022
