@@ -108,18 +108,18 @@ export default function Footer() {
       </div>
 
       <div className=" flex items-center flex-col-reverse p-9 md:grid md:grid-cols-12 md:max-w-screen-lg md:mx-auto">
-        <ul className="text-sm flex space-x-3 p-6 items-center text-center md:col-span-8 md:mx-auto">
-          <li>Terms of Service</li>
-          <li>Privacy</li>
-          <li>Legal</li>
+        <ul className="text-md flex space-x-3 p-6 items-center text-center md:col-span-8 md:mx-auto ">
+          <li className="hover:underline">Terms of Service</li>
+          <li className="hover:underline">Privacy</li>
+          <li className="hover:underline">Legal</li>
         </ul>
 
-        <div className="flex space-x-8 text-xl p-6 pb-8 md:col-span-4 md:p-0">
-          <FaFacebookF />
-          <FaTwitter />
-          <FaYoutube />
-          <FaLinkedinIn />
-          <FaRss />
+        <div className="flex space-x-8 text-2xl p-6 pb-8 md:col-span-4 md:p-0">
+          <FaFacebookF className="cursor-pointer hover:text-gray-500 transition duration-100 ease-linear" />
+          <FaTwitter className="cursor-pointer hover:text-gray-500 transition duration-100 ease-linear" />
+          <FaYoutube className="cursor-pointer hover:text-gray-500 transition duration-100 ease-linear" />
+          <FaLinkedinIn className="cursor-pointer hover:text-gray-500 transition duration-100 ease-linear" />
+          <FaRss className="cursor-pointer hover:text-gray-500 transition duration-100 ease-linear" />
         </div>
       </div>
     </div>
