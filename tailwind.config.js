@@ -12,6 +12,9 @@ module.exports = {
       },
       backgroundSize: {
         '16': '34rem',
+      },
+      minWidth: {
+        '300': '300px',
       }
     },
   },
