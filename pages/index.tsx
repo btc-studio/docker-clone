@@ -325,7 +325,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="my-28 ">
-          <div className="md:max-w-screen-xl md:mx-auto md:flex md:flex-row-reverse md:items-center md:gap-4">
+          <div className="md:max-w-screen-xl xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 md:flex md:flex-row-reverse md:items-center md:gap-4">
             <div className="md:basis-1/2 ">
               <Image src={Build} alt="brand" />
             </div>
@@ -351,7 +351,7 @@ const Home: NextPage = () => {
               </ul>
             </div>
           </div>
-          <div className="md:max-w-screen-xl md:mx-auto md:flex md:flex-row md:items-center md:gap-4 ">
+          <div className="md:max-w-screen-xl xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 md:flex md:flex-row md:items-center md:gap-4 ">
             <div className="md:basis-1/2 ">
               <Image src={Share} alt="brand" />
             </div>
@@ -375,7 +375,7 @@ const Home: NextPage = () => {
               </ul>
             </div>
           </div>
-          <div className="md:max-w-screen-xl md:mx-auto md:flex md:flex-row-reverse md:items-center md:gap-4 ">
+          <div className="md:max-w-screen-xl xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 md:flex md:flex-row-reverse md:items-center md:gap-4 ">
             <div className="md:basis-1/2 ">
               <Image src={Run} alt="brand" />
             </div>
@@ -431,12 +431,12 @@ const Home: NextPage = () => {
       </div>
 
       <div className="py-14">
-        <div className="flex flex-col  justify-between items-center md:flex-row-reverse max-w-screen-xl md:mx-auto ">
-          <div className="md:basis-1/2 ">
+        <div className="flex flex-col  justify-between items-center md:flex-row-reverse max-w-screen-xl xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 ">
+          <div className="md:basis-1/2 md:pl-12">
             <Image src={AllHands} alt="brand" />
           </div>
 
-          <div className="md:basis-1/2 mx-6 md:m-0">
+          <div className="md:basis-1/2 mx-6 md:m-0 md:pl-12">
             <div className="text-5xl font-semibold text-slate-800 ">
               A Community like No Other
             </div>
@@ -460,7 +460,7 @@ const Home: NextPage = () => {
             Use your favorite tools and images
           </div>
           <div>
-            <div className="flex flex-wrap items-center justify-center max-w-screen-xl md:mx-auto ">
+            <div className="flex flex-wrap items-center justify-center max-w-screen-xl xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 ">
               {Array.from(Array(13).keys()).map((item) => (
                 <div
                   key={item}
@@ -478,7 +478,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-screen-xl mb-16 md:mx-auto md:flex md:flex-row md:items-center ">
+      <div className="max-w-screen-xl mb-16 xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 md:flex md:flex-row md:items-center ">
         {/* <div className="h-48 md:ml-20 md:basis-1/2 md:h-80 w-full bg-[url('../public/pricing_fullhand.png')] bg-cover bg-no-repeat bg-center"></div> */}
         <div className="md:basis-1/2">
           <Image src={Pricing} alt="brand" />
@@ -508,7 +508,7 @@ const Home: NextPage = () => {
             See who uses Docker
           </div>
           <div>
-            <div className="flex flex-wrap items-center justify-center max-w-screen-xl md:mx-auto ">
+            <div className="flex flex-wrap items-center justify-center max-w-screen-xl xl:mx-auto xl:px-16 md:mx-6 lg:mx-16 ">
               {Array.from(Array(22).keys()).map((item) => (
                 <div
                   key={item}
@@ -568,7 +568,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className="text-center">
-          <button className="mx-auto mb-10 mt-24 md:mt-40 text-lg py-3 rounded font-semibold bg-blue-600 text-white px-12 ">
+          <button className="mx-auto mb-10 mt-24 md:mt-40 text-lg py-3 rounded font-semibold bg-blue-600 text-white px-12 focus:outline focus:outline-3 focus:outline-sky-400 transition-all duration-200 ease-linear">
             Learn more
           </button>
         </div>
@@ -638,7 +638,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="bg-slate-100 px-8 py-20">
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl xl:mx-auto xl:px-12 md:mx-6 lg:mx-16">
           <div className=" font-semibold text-3xl text-gray-800 text-center">
             Subscribe to our newsletter to get the latest updates and news from
             Docker delivered to your inbox monthly.
@@ -667,7 +667,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="bg-sky-600 font-semibold text-white  text-center text-6xl py-20 px-2  ">
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl xl:mx-auto xl:px-24 md:mx-6 lg:mx-16">
           Accelerate your application development today.
         </div>
       </div>
