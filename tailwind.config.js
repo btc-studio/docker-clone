@@ -15,8 +15,12 @@ module.exports = {
       },
       minWidth: {
         '300': '300px',
-      }
+      },
+      screens: {
+        'mdm': '960px',
+      },
     },
+
   },
   plugins: [],
 }

@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import useOnScreen from '../hooks';
 import AllHands from '../public/all-hands-community.png';
 import Aws from '../public/aws_sm_logo.png';
 import Bitbucket from '../public/bitbucket_full.png';
@@ -220,12 +222,20 @@ const countryList = [
   'Zimbabwe',
 ];
 const Home: NextPage = () => {
+  const [isEntered, setIsEntered] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const isVisible = useOnScreen(imageRef);
+  const fadeIn = isEntered ? 'fade' : '';
+
+  useEffect(() => {
+    isVisible && setIsEntered(true);
+  }, [isVisible]);
+
   return (
     <>
       <Head>
         <title>Empowering App Development for Developers | Docker </title>
       </Head>
-
       <div className="px-2 w-full pt-24 pb-48 md:py-56  text-white bg-[url('../public/cover.png')] bg-cover bg-no-repeat bg-center">
         <div className="md:max-w-screen-md md:mx-auto">
           <div className="md:leading-tight leading-none text-5xl md:text-6xl font-semibold text-center md:text-left">
@@ -454,7 +464,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="bg-gray-200 px-2 py-6">
+      <div className="bg-gray-200 px-2 py-6" ref={imageRef}>
         <div>
           <div className="pt-6 pb-14 text-4xl md:text-5xl font-semibold text-center text-slate-800">
             Use your favorite tools and images
@@ -466,8 +476,8 @@ const Home: NextPage = () => {
                   key={item}
                   className={
                     item > 3
-                      ? 'w-40 md:w-52 m-2 mt-0 hidden md:block'
-                      : 'w-40 md:w-52 m-2 mt-0'
+                      ? `${fadeIn} w-40 md:w-52 m-2 mt-0 hidden md:block`
+                      : `${fadeIn} w-40 md:w-52 m-2 mt-0`
                   }
                 >
                   <Image src={Bitbucket} alt="brand" />
@@ -514,8 +524,8 @@ const Home: NextPage = () => {
                   key={item}
                   className={
                     item > 3
-                      ? 'w-40 md:w-52 m-2 mt-0 hidden md:block'
-                      : 'w-40 md:w-52 m-2 mt-0'
+                      ? `${fadeIn} w-40 md:w-52 m-2 mt-0 hidden md:block`
+                      : `${fadeIn} w-40 md:w-52 m-2 mt-0`
                   }
                 >
                   <Image src={Netflix} alt="brand" />
