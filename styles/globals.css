@@ -110,8 +110,8 @@
 }
 
 #nav-icon {
-  width: 36px;
-  height: 30px;
+  width: 28px;
+  height: 24px;
   position: relative;
   cursor: pointer;
 }
@@ -119,9 +119,9 @@
 #nav-icon span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: 2px;
   width: 100%;
-  border-radius: 9px;
+  border-radius: 2px;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -143,7 +143,7 @@
 }
 
 #nav-icon span:nth-child(2) {
-  top: 26px;
+  top: 20px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -155,7 +155,7 @@
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 26px;
+  top: 20px;
   left: 4px;
 }
 
@@ -168,45 +168,44 @@
   left: 4px;
 }
 
-.dropdown-off {
-  position: relative;
-  /* transition: all 0.25s ease; */
-}
-.dropdown-on {
-  position: relative;
-}
-
 .off {
+  max-height: 0;
   width: 100%;
-  float: left;
   left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 35px;
-  visibility: hidden;
-  z-index: 1;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.on {
-  opacity: 1;
-  top: 50px;
-  visibility: visible;
+  overflow: hidden;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+.on {
+  max-height: 436px;
+  left: 0;
+  width: 100%;
+  overflow: auto;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  animation: hide-scroll 0.5s backwards;
+}
+
+@keyframes hide-scroll {
+  from,
+  to {
+    overflow: hidden;
+  }
+}
 
 @media only screen and (min-width: 960px) {
   .off {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-    top: 0;
+    /* max-height: fit-content; */
+    overflow: visible;
+  }
+  .on {
+    /* max-height: fit-content; */
+    overflow: visible;
   }
 }
