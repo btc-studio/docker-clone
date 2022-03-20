@@ -128,10 +128,10 @@
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 #nav-icon span:nth-child(1) {
@@ -170,6 +170,7 @@
 
 .off {
   max-height: 0;
+  z-index: 1;
   width: 100%;
   left: 0;
   overflow: hidden;
@@ -180,7 +181,8 @@
   transition: all 0.5s ease;
 }
 .on {
-  max-height: 436px;
+  max-height: 1433px;
+  z-index: 1;
   left: 0;
   width: 100%;
   overflow: auto;

@@ -3,10 +3,15 @@ import { FiSearch } from 'react-icons/fi';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import MenuIcon from './MenuIcon';
+import { ImPlus } from 'react-icons/im';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(false);
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+
   const inputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
   const isHome = router.pathname === '/';
@@ -22,6 +27,8 @@ export default function Navbar() {
       href: '/about',
       title: 'Products',
       hasSub: true,
+      showSubmenus: () => setShow1((prev) => !prev),
+      isShowSub: show1,
       submenus: [
         {
           href: '/about',
@@ -93,6 +100,8 @@ export default function Navbar() {
       onClick: () => setIsOpen(false),
       href: '/about',
       title: 'Developers',
+      showSubmenus: () => setShow2((prev) => !prev),
+      isShowSub: show2,
       submenus: [
         {
           href: '/about',
@@ -132,6 +141,8 @@ export default function Navbar() {
       onClick: () => setIsOpen(false),
       href: '/about',
       title: 'About us',
+      showSubmenus: () => setShow3((prev) => !prev),
+      isShowSub: show3,
       submenus: [
         {
           href: '/about',
@@ -168,11 +179,7 @@ export default function Navbar() {
   return (
     <div className="absolute top-0 w-full">
       <nav
-        className={
-          isOpen
-            ? `relative mx-2 px-2 mdm:m-0 py-4 mdm:px-10 mdm:py-6 mdm:flex mdm:items-center ${bgColor}`
-            : `relative mx-2 px-2 mdm:m-0 py-4 mdm:px-10 mdm:py-6 mdm:flex mdm:items-center ${bgColor}`
-        }
+        className={`relative mx-2 px-2 mdm:m-0 py-4 mdm:px-10 mdm:py-6 mdm:flex mdm:items-center ${bgColor}`}
       >
         <div className="flex justify-between items-center">
           <div className="cursor-pointer">
@@ -210,12 +217,12 @@ export default function Navbar() {
           className={
             isOpen
               ? ` bg-sky-600 mdm:bg-transparent mt-6 mdm:mt-0 px-4 mdm:px-0 mdm:grow mdm:flex mdm:justify-between mdm:ml-6 mdm:h-11 absolute mdm:relative on ${color}`
-              : ` px-4 mdm:px-0 mt-6 mdm:mt-0 mdm:grow mdm:flex mdm:justify-between mdm:ml-6 mdm:h-11 absolute mdm:relative off ${color}`
+              : `bg-sky-600 px-4 mdm:px-0 mt-6 mdm:mt-0 mdm:grow mdm:flex mdm:justify-between mdm:ml-6 mdm:h-11 absolute mdm:relative off ${color}`
           }
         >
-          <div className="relative my-7  mdm:hidden">
+          <div className="relative my-7 mdm:hidden">
             <input
-              className="w-full py-1.5 px-4  bg-blue-400 rounded"
+              className="w-full py-1.5 px-4 bg-blue-400 rounded"
               type="text"
             />
             <FiSearch className="absolute top-1/4 right-3" />
@@ -226,30 +233,47 @@ export default function Navbar() {
               key={idx}
               className={
                 search
-                  ? 'md:items-center md:hidden'
-                  : 'md:flex md:items-center  '
+                  ? 'mdm:items-center mdm:hidden'
+                  : 'mdm:flex mdm:items-center  '
               }
             >
-              <li
-                onClick={item.onClick}
-                className="font-medium py-2 px-1.5  lg:px-3 xl:px-6  hover:underline hover:decoration-1  relative group"
-              >
-                <Link href={item.href}>{item.title}</Link>
+              <li className="font-medium py-2 px-1.5  lg:px-3 xl:px-6 relative group">
+                <div className="flex items-center justify-between">
+                  <div
+                    onClick={item.onClick}
+                    className="hover:underline hover:decoration-1"
+                  >
+                    <Link href={item.href}>{item.title}</Link>
+                  </div>
+                  {item.submenus.length ? (
+                    <ImPlus
+                      size={10}
+                      className="mdm:hidden cursor-pointer p-3 box-content"
+                      onClick={item.showSubmenus}
+                    />
+                  ) : null}
+                </div>
+
                 {item.submenus.length ? (
-                  <div className="hidden absolute md:group-hover:block  wrapper">
-                    <div className="bg-white arrow mt-4 text-slate-700  rounded">
+                  <div className=" mdm:absolute  mdm:group-hover:block mdm:hidden mdm:wrapper">
+                    <div className="mdm:bg-white mdm:arrow mdm:mt-4 mdm:text-slate-700 mdm:rounded">
                       <div
                         className={
                           item.hasSub
-                            ? 'flex w-max min-w-300 py-6 px-5 gap-8'
-                            : ' min-w-300 w-max py-6 px-5 gap-8'
+                            ? 'ml-6 mdm:ml-0 mdm:flex mdm:w-max mdm:min-w-300 mdm:py-6 mdm:px-5 mdm:gap-8'
+                            : 'ml-6 mdm:ml-0 mdm:min-w-300 mdm:w-max mdm:py-6 mdm:px-5 mdm:gap-8'
                         }
                       >
                         {item.hasSub ? (
                           item.submenus.map((sub, idx) => (
-                            <div key={idx}>
+                            <div
+                              key={idx}
+                              className={
+                                item.isShowSub ? 'block' : 'hidden mdm:block'
+                              }
+                            >
                               <div className="text-slate-500">{sub.title}</div>
-                              <ul>
+                              <ul className="ml-6 mdm:ml-0">
                                 {sub.menus.map((menu, idx) => (
                                   <li
                                     key={idx}
@@ -262,8 +286,12 @@ export default function Navbar() {
                             </div>
                           ))
                         ) : (
-                          <div key={idx}>
-                            {/* <div className="text-slate-500">{sub.title}</div> */}
+                          <div
+                            key={idx}
+                            className={
+                              item.isShowSub ? 'block' : 'hidden mdm:block'
+                            }
+                          >
                             <ul>
                               {item.submenus.map((sub, idx) => (
                                 <li
