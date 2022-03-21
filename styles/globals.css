@@ -203,11 +203,13 @@
 
 @media only screen and (min-width: 960px) {
   .off {
-    /* max-height: fit-content; */
     overflow: visible;
   }
   .on {
-    /* max-height: fit-content; */
     overflow: visible;
   }
+}
+
+.bluefill {
+  filter: invert(0.65) sepia(1) saturate(5) hue-rotate(185deg);
 }
