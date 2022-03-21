@@ -185,12 +185,16 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center">
           <Link href="/">
-            <Image
-              src={Logo}
-              width={160}
-              height={42}
-              className={isHome ? 'cursor-pointer' : 'cursor-pointer bluefill'}
-            />
+            <div>
+              <Image
+                src={Logo}
+                width={160}
+                height={42}
+                className={
+                  isHome ? 'cursor-pointer' : 'cursor-pointer bluefill'
+                }
+              />
+            </div>
           </Link>
           <div className="block mdm:hidden">
             <MenuIcon open={isOpen} isHome={isHome} setIsOpen={setIsOpen} />
