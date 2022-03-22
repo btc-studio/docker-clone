@@ -6,6 +6,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 import Image from 'next/image';
+
 import FooterLogo from '../../public/logo2.svg';
 
 export default function Footer() {

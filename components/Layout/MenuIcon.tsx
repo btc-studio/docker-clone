@@ -1,11 +1,14 @@
-import { MenuIconProps } from './interfaces';
+import classNames from 'classnames';
 
-export default function MenuIcon({ isHome, open, setIsOpen }: MenuIconProps) {
+import { IMenuIconProps } from './interfaces';
+
+export default function MenuIcon({ isHome, open, setIsOpen }: IMenuIconProps) {
   const color = isHome ? 'bg-white' : 'bg-sky-700';
+
   return (
     <div
       id="nav-icon"
-      className={open ? 'open' : ''}
+      className={classNames({ open: open })}
       onClick={() => setIsOpen((prev) => !prev)}
     >
       <span className={color}></span>

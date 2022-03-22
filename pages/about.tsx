@@ -7,7 +7,7 @@ export default function About() {
         <title>About</title>
       </Head>
 
-      <div className="mt-24  text-center text-3xl">About page</div>
+      <div className="mt-24 text-center text-3xl">About page</div>
     </>
   );
 }

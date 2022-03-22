@@ -1,28 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import MenuIcon from './MenuIcon';
+import { FiSearch } from 'react-icons/fi';
 import { ImPlus } from 'react-icons/im';
+
+import MenuIcon from './MenuIcon';
 import Logo from '../../public/newLogo.svg';
+import classNames from 'classnames';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(false);
+
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
+
   const router = useRouter();
+
   const isHome = router.pathname === '/';
-  const bgColor = isHome
-    ? 'text-white mdm:bg-transparent'
-    : 'text-slate-600 mdm:bg-white';
-
-  const color = isHome ? 'text-white ' : 'text-white mdm:text-slate-600';
-
   const navbar = [
     {
       onClick: () => setIsOpen(false),
@@ -181,7 +180,10 @@ export default function Navbar() {
   return (
     <div className="absolute top-0 w-full">
       <nav
-        className={`relative mx-2 px-2 mdm:m-0 py-4 mdm:px-10 mdm:py-6 mdm:flex mdm:items-center ${bgColor}`}
+        className={classNames(
+          'relative mx-2 px-2 mdm:m-0 py-4 mdm:px-10 mdm:py-6 mdm:flex mdm:items-center text-slate-600 bg-white',
+          { 'text-white bg-transparent': isHome }
+        )}
       >
         <div className="flex justify-between items-center">
           <Link href="/">
@@ -202,11 +204,13 @@ export default function Navbar() {
         </div>
 
         <div
-          className={
-            isOpen
-              ? ` bg-sky-600 mdm:bg-transparent mt-6 mdm:mt-0 px-4 mdm:px-0 mdm:grow mdm:flex mdm:justify-between mdm:ml-6 mdm:h-11 absolute mdm:relative on ${color}`
-              : `bg-sky-600 px-4 mdm:px-0 mt-6 mdm:mt-0 mdm:grow mdm:flex mdm:justify-between mdm:ml-6 mdm:h-11 absolute mdm:relative off ${color}`
-          }
+          className={classNames(
+            'bg-sky-600 px-4 mdm:px-0 mt-6 mdm:mt-0 mdm:grow mdm:flex mdm:justify-between mdm:ml-6 mdm:h-11 absolute mdm:relative text-white',
+            { 'mdm:text-slate-600': !isHome },
+            { 'mdm:bg-transparent': isOpen },
+            { on: isOpen },
+            { off: !isOpen }
+          )}
         >
           <div className="relative my-7 mdm:hidden">
             <input
@@ -219,11 +223,9 @@ export default function Navbar() {
           {navbar.map((item, idx) => (
             <ul
               key={idx}
-              className={
-                search
-                  ? 'mdm:items-center mdm:hidden'
-                  : 'mdm:flex mdm:items-center  '
-              }
+              className={classNames('mdm:items-center mdm:flex', {
+                'mdm:hidden': search,
+              })}
             >
               <li className="font-medium py-2 px-1.5  lg:px-3 xl:px-6 relative group">
                 <div className="flex items-center justify-between">
@@ -243,14 +245,18 @@ export default function Navbar() {
                 </div>
 
                 {item.submenus.length ? (
-                  <div className=" mdm:absolute  mdm:group-hover:block mdm:hidden mdm:wrapper">
-                    <div className="mdm:bg-white mdm:arrow mdm:mt-4 mdm:text-slate-700 mdm:rounded">
+                  <div className=" mdm:absolute mdm:group-hover:block mdm:hidden mdm:wrapper">
+                    <div
+                      className={classNames(
+                        'mdm:bg-white mdm:arrow mdm:mt-4 mdm:text-slate-700 mdm:rounded',
+                        { 'mdm:arrowRed': !isHome }
+                      )}
+                    >
                       <div
-                        className={
-                          item.hasSub
-                            ? 'ml-6 mdm:ml-0 mdm:flex mdm:w-max mdm:min-w-300 mdm:py-6 mdm:px-5 mdm:gap-8'
-                            : 'ml-6 mdm:ml-0 mdm:min-w-300 mdm:w-max mdm:py-6 mdm:px-5 mdm:gap-8'
-                        }
+                        className={classNames(
+                          'ml-6 mdm:ml-0 mdm:min-w-300 mdm:w-max mdm:py-6 mdm:px-5 mdm:gap-8',
+                          { 'mdm:flex': item.hasSub }
+                        )}
                       >
                         {item.hasSub ? (
                           item.submenus.map((sub, idx) => (
@@ -305,11 +311,10 @@ export default function Navbar() {
           <div className="md:flex md:items-center md:ml-auto">
             <input
               ref={inputRef}
-              className={
-                search
-                  ? 'hidden md:block py-2 px-10 pl-6 bg-sky-500 rounded-sm border-b outline-none '
-                  : 'hidden'
-              }
+              className={classNames('hidden', {
+                'md:block py-2 px-10 pl-6 bg-sky-500 rounded-sm border-b outline-none':
+                  search,
+              })}
               autoFocus
               type="text"
             />
