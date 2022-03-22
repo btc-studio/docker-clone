@@ -4,7 +4,7 @@ export interface ILayoutProps {
   children: React.ReactNode;
 }
 
-export interface MenuIconProps {
+export interface IMenuIconProps {
   open: boolean;
   isHome: boolean;
   setIsOpen: React.Dispatch<SetStateAction<boolean>>;
